@@ -1,0 +1,23 @@
+<p>评论 <small>共{{ article.comment_num }}条评论</small></p>
+
+<form action="" method="post">
+	{% csrf_token %}
+	<!-- {{ form.media }} -->
+	{{ form.as_p }}
+	<input type="submit" name="">
+</form>
+{% now "Y" as current_year %}
+{% now "d" as current_day %}
+
+{% for comment in comment_list %}
+	<p><a href="#">{{ comment.author }}</a>: {{ comment.content }}</p>
+	<p>
+	{% if comment.created_time|date:'d' == current_day %}
+		{{ comment.created_time|time:"H:i" }}
+	{% elif comment.created_time|date:'Y' == current_year %}
+		{{ comment.created_time|date:'m-d H:i' }}
+	{% else %}
+		{{ comment.created_time|date:'Y-m-d H:i' }}
+	{% endif %}
+	reply</p>
+{% endfor %}
