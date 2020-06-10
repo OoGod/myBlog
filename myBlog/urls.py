@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
     path('mdeditor/',include('mdeditor.urls')),
+    path('',include('blog.urls')),
 ]
 
 if settings.DEBUG:
