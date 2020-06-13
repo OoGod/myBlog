@@ -29,8 +29,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # 第三方登录，里面的值是你的开放平台对应的值
-SOCIAL_AUTH_WEIBO_KEY = 'xxxxxxxx'
-SOCIAL_AUTH_WEIBO_SECRET = 'xxxxxxxx'
+SOCIAL_AUTH_WEIBO_KEY = 'XXXXXXXXXX'
+SOCIAL_AUTH_WEIBO_SECRET = 'XXXXXXXXXX'
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/blog/'
 
@@ -57,6 +57,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ROOT_URLCONF = 'myBlog.urls'
 
@@ -140,7 +142,8 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'uploads')
+MEDIA_ROOT = os.path.join(BASE_DIR,'static/media/')
+# MEDIA_ROOT = os.path.join(BASE_DIR,'uploads')
 MEDIA_URL = '/media/'
 
 import django_heroku
