@@ -31,3 +31,9 @@ heroku open # 访问测试
 heroku local web -f Procfile.windows # 本地访问测试
 ```
 
+# 第三方登录,填入自己(weibo)开放平台对应的值
+```
+# 第三方登录，里面的值是你的开放平台对应的值
+SOCIAL_AUTH_WEIBO_KEY = 'xxxxxxxx'
+SOCIAL_AUTH_WEIBO_SECRET = 'xxxxxxxx'
+```
