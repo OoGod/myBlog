@@ -1,3 +1,8 @@
+<p>
+	<a href="/login/weibo/" target="_blank">Weibo</a>
+	<a href="/logout/" target="_blank">logout</a>
+
+</p>
 <p>评论 <small>共{{ article.comment_num }}条评论</small></p>
 
 <form action="" method="post">
@@ -10,8 +15,9 @@
 {% now "d" as current_day %}
 
 {% for comment in comment_list %}
-	<p><a href="#">{{ comment.author }}</a>: {{ comment.content }}</p>
-	<p>
+	<p class="comment"><a href="#">{{ comment.author }}</a>: {{ comment.content }}
+	<br>
+	<br>
 	{% if comment.created_time|date:'d' == current_day %}
 		{{ comment.created_time|time:"H:i" }}
 	{% elif comment.created_time|date:'Y' == current_year %}
@@ -19,5 +25,5 @@
 	{% else %}
 		{{ comment.created_time|date:'Y-m-d H:i' }}
 	{% endif %}
-	reply</p>
+	<a href="#">reply</a></p>
 {% endfor %}
