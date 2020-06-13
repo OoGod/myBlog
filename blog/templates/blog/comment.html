@@ -1,10 +1,7 @@
-<p>
-	<a href="/login/weibo/" target="_blank">Weibo</a>
-	<a href="/logout/" target="_blank">logout</a>
-
-</p>
 <p>评论 <small>共{{ article.comment_num }}条评论</small></p>
-
+<p>
+	请<a href="/login/weibo/" target="_blank">登录</a>后评论<small>(test)</small>
+</p>
 <form action="" method="post">
 	{% csrf_token %}
 	<!-- {{ form.media }} -->

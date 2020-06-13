@@ -11,9 +11,9 @@ class Author(models.Model):
 
 class Article(models.Model):
 
-	title = models.CharField("文章标题",max_length=200)
+	title = models.CharField("文章标题",max_length=30)
 	content = MDTextField("文章内容")
-	djgest = models.TextField("文章概要",max_length=500)
+	djgest = models.TextField("文章概要")
 	author = models.ForeignKey(Author,on_delete=models.CASCADE)
 	comment_num = models.BigIntegerField(default=0)
 	view = models.BigIntegerField(default=0)
