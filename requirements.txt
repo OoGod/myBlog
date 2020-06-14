@@ -4,3 +4,4 @@ Markdown
 gunicorn
 django-heroku
 social-auth-app-django
+Pygments
