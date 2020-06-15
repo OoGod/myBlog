@@ -25,6 +25,7 @@ class Author(models.Model):
 class Article(models.Model):
 
 	title = models.CharField("文章标题",max_length=30)
+	category = models.ForeignKey(Category,on_delete=models.CASCADE)
 	content = MDTextField("文章内容")
 	djgest = models.TextField("文章概要")
 	author = models.ForeignKey(Author,on_delete=models.CASCADE)
