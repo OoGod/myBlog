@@ -29,8 +29,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # 第三方登录，里面的值是你的开放平台对应的值
-SOCIAL_AUTH_WEIBO_KEY = '428263803'
-SOCIAL_AUTH_WEIBO_SECRET = 'a66827d6d57a51434e10db33bc19f690'
+SOCIAL_AUTH_WEIBO_KEY = 'XXXXXXXXX'
+SOCIAL_AUTH_WEIBO_SECRET = 'XXXXXXXXX'
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/blog/'
 
@@ -148,7 +148,7 @@ MEDIA_URL = '/media/'
 
 import django_heroku
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
-import dj_database_url
-DATABASES['default']=dj_database_url.config(conn_max_age=600,ssl_require=True)
+# import dj_database_url
+# DATABASES['default']=dj_database_url.config(conn_max_age=600,ssl_require=True)
