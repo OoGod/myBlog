@@ -1,11 +1,24 @@
 from django.db import models
 from mdeditor.fields import MDTextField
 # Create your models here.
+class Tag(models.Model):
+	tag_name = models.CharField("标签",max_length=50)
 
+	def __str__(self):
+		return self.tag_name 
+
+class Category(models.Model):
+
+	name = models.CharField("文章类型",max_length=50)
+	created_time = models.DateTimeField("创建时间",auto_now_add=True)
+	last_mod_time = models.DateTimeField("修改时间",auto_now=True)
+
+	def __str__(self):
+		return self.name
 
 class Author(models.Model):
 	name = models.CharField("作者姓名",max_length=20)
-
+	avatar = models.ImageField(upload_to='avatar/%Y%m%d',blank=True)
 	def __str__(self):
 		return self.name
 
@@ -19,7 +32,7 @@ class Article(models.Model):
 	view = models.BigIntegerField(default=0)
 	created_time = models.DateTimeField("创建时间",auto_now_add=True)
 	last_mod_time = models.DateTimeField("修改时间",auto_now=True)
-
+	tag = models.ManyToManyField(Tag,blank=True)
 	def commented(self):
 
 		self.comment_num += 1
