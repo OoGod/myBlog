@@ -32,7 +32,7 @@ class Article(models.Model):
 	view = models.BigIntegerField(default=0)
 	created_time = models.DateTimeField("创建时间",auto_now_add=True)
 	last_mod_time = models.DateTimeField("修改时间",auto_now=True)
-	tag = models.ManyToManyField(Tag,blank=True)
+	# tag = models.ManyToManyField(Tag,blank=True)
 	def commented(self):
 
 		self.comment_num += 1
