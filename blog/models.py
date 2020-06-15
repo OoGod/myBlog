@@ -18,7 +18,7 @@ class Category(models.Model):
 
 class Author(models.Model):
 	name = models.CharField("作者姓名",max_length=20)
-	# avatar = models.ImageField(upload_to='avatar/%Y%m%d',blank=True)
+	avatar = models.ImageField(upload_to='avatar/%Y%m%d',blank=True)
 	def __str__(self):
 		return self.name
 
