@@ -4,16 +4,16 @@
 <head>
 	<meta charset="utf-8">
 	<title>Aliceboy' Blog</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'mdeditor/css/editormd.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/code.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'mdeditor/css/editormd.css' %}">
 	{% block css %}{% endblock %}
 </head>
 <body>
-	<div class="markdown-body all">
-	<p><a href="{% url 'blog:index' %}"><img src="{% static 'logo/logo.png' %}"></a></p>
-	{% block content %}
-	{% endblock %}
+	<div class='body_main'>
+		<p><a href="{% url 'blog:index' %}"><img src="{% static 'logo/logo.png' %}"></a></p>
+		{% block content %}
+		{% endblock %}
 	</div>
 </body>
 </html>

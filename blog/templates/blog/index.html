@@ -1,47 +1,15 @@
 {% extends 'blog/base.html' %}
 
-{% block css %}
-<style type="text/css">
-	/*.img_avatar {
-	    display: block;
-	    border-radius: 50%;
-	    border: 1px solid #eee;
-	    min-width: 48px;
-	    min-height: 48px;
-	    width: 48px;
-	    height: 48px;
-	}*/
-/*	.img_and {
-		display: flex;
-		align-items: center;
 
-	}*/
-	h3.index_h3 { 
-		border-bottom: 1px solid #FFF;
-		margin-bottom:5px;
-		color: #212121;
-		/*margin-top: 5px; */
-	}
-	p.index_p {
-		color:#888888; 
-	}
-
-	 a.index_a:link {
-		text-decoration: none;
-	}
-
-</style>
-
-{% endblock %}
 {% block content %}
 {% for article in article_list %}
 <div class="index_blog">
-	<a class="index_a" href="{% url 'blog:detail' pk=article.pk %}">
-		<h3 class='index_h3'>{{ article.title }}</h3>
+	<a href="{% url 'blog:detail' pk=article.pk %}">
+		<h2>{{ article.title }}</h2>
 		<p class="index_p">{{ article.djgest }}</p>
 	</a>
 	<div class="time_and">
-		<a class="index_a" href="#">{{ article.author }}</a>
+		<a href="#">{{ article.author }}</a>
 		&nbsp;
 		{{ article.last_mod_time|date:'Y-m-d' }}
 		&nbsp;
@@ -52,11 +20,11 @@
 <br>
 <p>
 	{% if article_list.has_previous %}
-		<a class="index_a" href="?page={{ article_list.previous_page_number }}">上一页</a>
+		<a href="?page={{ article_list.previous_page_number }}">上一页</a>
 	{% endif %}
 	Page {{ article_list.number }} of {{ article_list.paginator.num_pages }}
 	{% if article_list.has_next %}
-		<a class="index_a" href="?page={{ article_list.next_page_number }}">下一页</a>
+		<a href="?page={{ article_list.next_page_number }}">下一页</a>
 	{% endif %}
 </p>
 {% endblock %}

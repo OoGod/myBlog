@@ -1,25 +1,48 @@
-
-body{
-	/*background-color: #eaf3da;*/
-	/*background-color: #fafae9;*/
-	background-color: #f8f9fa;
+@font-face {
+	font-family: "Emblema One";
+	src: url("http://wickedlysmart.com/hfhtmlcss/chapter8/journal/EmblemaOne-Regular.woff"),
+		 url("http://wickedlysmart.com/hfhtmlcss/chapter8/journal/EmblemaOne-Regular.ttf");
 }
-.all {
-	/*background-color: #d2b48c;*/
-	/*background-color: #eaf3da;*/
-	/*background-color: #fafae9;*/
-	background-color: #ffffff;
+body {
+	background-color: #e9ecef;
+	font-family: Verdana, Geneva, Arial, sans-serif;
+	font-size: medium;
+}
+div.body_main {
+	background-color: #fff;
 	margin-left: 20%;
 	margin-right: 20%;
-	/*border: 2px dotted black;*/
 	border: 2px solid #dadce0;
 	padding: 10px 10px 10px 10px;
-	font-family: sans-serif;
 }
+
+h1,h2 {
+	font-family: "Emblema One", sans-serif;
+	color: #212121;
+	border-bottom: 1px solid #ccc;
+}
+h1 {
+	font-size: 2em;
+	
+	margin-bottom:5px;
+}
+h2,.article_body h2 {
+	font-size: 1.3em;
+	font-weight: normal;
+}
+a {
+	text-decoration: none;
+	color: #551A8B;
+}
+.img_and {
+	display: flex;
+	align-items: center;
+}
+
 .time_and {
-			font-size: 13px;
-			color: #632c2c;
-		}	
+	font-size: 0.8em;
+	color: #632c2c;
+}	
 .img_avatar {
     display: block;
     border-radius: 50%;
@@ -29,7 +52,22 @@ body{
     width: 48px;
     height: 48px;
 }
-.img_and {
-	display: flex;
-	align-items: center;
+
+/*index*/
+p.index_p {
+	color:#888888; 
+}
+
+/*detail*/
+.comment {
+	background-color: #f5f5f5;
+	margin-left: 2%;
+	margin-right: 2%;
+	border-bottom: 1px dotted gray;
+	padding: 0px 10px 0px 10px;
+
+}
+
+h1.detail_h1 { 
+	margin-top: 5px; 
 }

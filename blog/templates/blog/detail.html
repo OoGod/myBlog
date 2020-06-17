@@ -1,28 +1,8 @@
 {% extends 'blog/base.html' %}
 
-{% block css %}
-	
-	<style type="text/css">
-		.comment {
-			background-color: #f5f5f5;
-			margin-left: 2%;
-			margin-right: 2%;
-			border-bottom: 1px dotted gray;
-			padding: 0px 10px 0px 10px;
-
-		}
-		h1.detail_h1 { 
-		border-bottom: 1px solid #FFF;
-		margin-bottom:5px;
-		margin-top: 5px; 
-		color: #212121;
-	}
-	</style>	
-{% endblock %}
-
 {% block content %}
 <div class="img_and">
-<img class="img_avatar" src="{{ article.author.avatar.url }}">
+<img class="img_avatar" src="{{ article.author.avatar.url }}">&nbsp;
 <a href="#">{{ article.author }}</a>
 </div>
 <h1 class="detail_h1">{{ article.title }}</h1>
@@ -34,8 +14,11 @@
 	&nbsp;
 	<a href="#">{{ article.category }}</a>
 </div>	
-	
-{{ article.content|safe }}
+<br>
+<br>
+<div class="article_body markdown-body">	
+	{{ article.content|safe }}
+</div>
 <br>
 {% include 'blog/comment.html' %}
 {% endblock %}

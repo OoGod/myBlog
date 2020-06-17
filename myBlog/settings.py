@@ -58,6 +58,17 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CACHES = {
+    'default':{
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION':'127.0.0.1:11211',
+        'TIME_OUT':60,
+        'OPTIONS':{
+            'server_max_value_length':1024*1024*2,
+        }
+    }
+}
+
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ROOT_URLCONF = 'myBlog.urls'
@@ -148,7 +159,7 @@ MEDIA_URL = '/media/'
 
 import django_heroku
 
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
 
-# import dj_database_url
-# DATABASES['default']=dj_database_url.config(conn_max_age=600,ssl_require=True)
+import dj_database_url
+DATABASES['default']=dj_database_url.config(conn_max_age=600,ssl_require=True)
