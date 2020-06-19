@@ -2,6 +2,7 @@
 
 
 {% block content %}
+<h3 class="index_h3">最新文章</h3>
 {% for article in article_list %}
 <div class="index_blog">
 	<a href="{% url 'blog:detail' pk=article.pk %}">

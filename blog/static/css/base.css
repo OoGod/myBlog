@@ -9,14 +9,6 @@ body {
 	font-family: Verdana, Geneva, Arial, sans-serif;
 	font-size: medium;
 }
-div.body_main {
-	background-color: #fff;
-	margin-left: 20%;
-	margin-right: 20%;
-	border: 2px solid #dadce0;
-	padding: 10px 10px 10px 10px;
-}
-
 h1,h2 {
 	font-family: "Emblema One", sans-serif;
 	color: #212121;
@@ -27,6 +19,28 @@ h1 {
 	
 	margin-bottom:5px;
 }
+div.blog_first {
+	/*background-color: #7c987c;*/
+	/*background-color: #252a34;*/
+	padding: 30px;
+	margin:0px 20px 0 20px;
+	color: white;
+	background-image: url(../images/7.jpg);
+	background-repeat: no-repeat;
+}
+.blog_first_h1 {
+	color: white;
+}
+div.body_main {
+	/*background-color: #fff;*/
+	margin-left: 20%;
+	margin-right: 20%;
+	/*border: 2px solid #dadce0;*/
+	/*border-right: 0px;*/
+	border-left: 2px solid #dadce0;
+	padding: 10px 10px 10px 10px;
+}
+
 h2,.article_body h2 {
 	font-size: 1.3em;
 	/*font-weight: normal;*/
@@ -61,6 +75,12 @@ a {
 }
 
 /*index*/
+.index_h3 {
+	padding: 5px;
+	margin:20px;
+	border-bottom:2px dashed #CAA;
+	font-size: 1.5em;
+}
 p.index_p {
 	color:#888888; 
 	/*color: #555;*/
@@ -69,10 +89,10 @@ p.index_p {
 	/*line-height: 1.3em;*/
 	/*font-style: italic;*/
 	/*font-family: Georgia, "Times New Roman", Times, serif;*/
-	background-color: #EEE;
+	/*background-color: #EEE;*/
 	padding: 5px;
 	margin: 20px;
-	border:2px dashed white;
+	/*border:2px dashed white;*/
 	background-image: url(../images/background.gif);
 	background-repeat: no-repeat;
 	background-position: top right;
