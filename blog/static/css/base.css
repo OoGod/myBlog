@@ -5,6 +5,7 @@
 }
 body {
 	background-color: #e9ecef;
+	/*background-color: #f8f9fa;*/
 	font-family: Verdana, Geneva, Arial, sans-serif;
 	font-size: medium;
 }
@@ -19,7 +20,7 @@ div.body_main {
 h1,h2 {
 	font-family: "Emblema One", sans-serif;
 	color: #212121;
-	border-bottom: 1px solid #ccc;
+	/*border-bottom: 1px solid #ccc;*/
 }
 h1 {
 	font-size: 2em;
@@ -28,7 +29,13 @@ h1 {
 }
 h2,.article_body h2 {
 	font-size: 1.3em;
-	font-weight: normal;
+	/*font-weight: normal;*/
+}
+.article_body h3{
+	font-size: 1.2em;
+}
+.article_body h4{
+	font-size: 1em;
 }
 a {
 	text-decoration: none;
@@ -56,6 +63,19 @@ a {
 /*index*/
 p.index_p {
 	color:#888888; 
+	/*color: #555;*/
+}
+.index_blog{
+	/*line-height: 1.3em;*/
+	/*font-style: italic;*/
+	/*font-family: Georgia, "Times New Roman", Times, serif;*/
+	background-color: #EEE;
+	padding: 5px;
+	margin: 20px;
+	border:2px dashed white;
+	background-image: url(../images/background.gif);
+	background-repeat: no-repeat;
+	background-position: top right;
 }
 
 /*detail*/
