@@ -26,7 +26,7 @@ SECRET_KEY = 'h2_&q!t0s2%q7cym=ju9i^u2kv8-_-7!q^%aju^9p@*^j09cmq'
 DEBUG = True
 # DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
 # 第三方登录，里面的值是你的开放平台对应的值
 SOCIAL_AUTH_WEIBO_KEY = 'XXXXXXXXX'
