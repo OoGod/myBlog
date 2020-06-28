@@ -10,16 +10,16 @@
 	{% block css %}{% endblock %}
 </head>
 <body>
-	<div class="blog_first">
-		<h1 class="blog_first_h1">我的小窝</h1>
+	<div id="blog_first">
+		<h1>我的小窝</h1>
 		<p>day day up</p>
 		<br>
 	</div>
-	<div class='body_main'>
-		<!-- <p><a href="{% url 'blog:index' %}"><img src="{% static 'logo/logo.png' %}"></a></p> -->
-		{% block content %}
-		{% endblock %}
-	</div>
+	
+	{% block content %}
+	{% endblock %}
+	
 	{% include 'blog/footer.html' %}
 </body>
+
 </html>

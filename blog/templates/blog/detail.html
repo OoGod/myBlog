@@ -1,24 +1,26 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-<div class="img_and">
-<img class="img_avatar" src="{{ article.author.avatar.url }}">&nbsp;
-<a href="#">{{ article.author }}</a>
+<div id="body_main">
+	<div id="author_avatar">
+		<img src="{{ article.author.avatar.url }}">&nbsp;
+		<a href="#">{{ article.author }}</a>
+	</div>
+	<h1>{{ article.title }}</h1>
+	<div class="time_and">
+		<!-- |date:'Y-m-d' -->
+		{{ article.last_mod_time }}
+		&nbsp;
+		阅读&nbsp;{{ article.view }}
+		&nbsp;
+		<a href="#">{{ article.category }}</a>
+	</div>	
+	<br>
+	<br>
+	<div class="article_body markdown-body">	
+		{{ article.content|safe }}
+	</div>
+	<br>
+	{% include 'blog/comment.html' %}
 </div>
-<h1 class="detail_h1">{{ article.title }}</h1>
-<div class="time_and">
-	<!-- |date:'Y-m-d' -->
-	{{ article.last_mod_time }}
-	&nbsp;
-	阅读&nbsp;{{ article.view }}
-	&nbsp;
-	<a href="#">{{ article.category }}</a>
-</div>	
-<br>
-<br>
-<div class="article_body markdown-body">	
-	{{ article.content|safe }}
-</div>
-<br>
-{% include 'blog/comment.html' %}
 {% endblock %}

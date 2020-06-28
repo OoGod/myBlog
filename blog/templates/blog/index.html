@@ -2,31 +2,33 @@
 
 
 {% block content %}
-<h3 class="index_h3">最新文章</h3>
-{% for article in article_list %}
-<div class="index_blog">
-	<a href="{% url 'blog:detail' pk=article.pk %}">
-		<h2>{{ article.title }}</h2>
-		<p class="index_p">{{ article.djgest }}</p>
-	</a>
-	
-	<div class="time_and">
-		<a href="#">{{ article.author }}</a>
-		&nbsp;
-		{{ article.last_mod_time|date:'Y-m-d' }}
-		&nbsp;
-		view&nbsp;{{ article.view }}
+<div id='body_main'>
+	<h3>最新文章</h3>
+	{% for article in article_list %}
+	<div class="index_blog">
+		<a href="{% url 'blog:detail' pk=article.pk %}">
+			<h2>{{ article.title }}</h2>
+			<p>{{ article.djgest }}</p>
+		</a>
+		
+		<div class="time_and">
+			<a href="#">{{ article.author }}</a>
+			&nbsp;
+			{{ article.last_mod_time|date:'Y-m-d' }}
+			&nbsp;
+			view&nbsp;{{ article.view }}
+		</div>
 	</div>
+	{% endfor %}
+	<br>
+	<p id='page'>
+		{% if article_list.has_previous %}
+			<a href="?page={{ article_list.previous_page_number }}">上一页</a>
+		{% endif %}
+		Page {{ article_list.number }} of {{ article_list.paginator.num_pages }}
+		{% if article_list.has_next %}
+			<a href="?page={{ article_list.next_page_number }}">下一页</a>
+		{% endif %}
+	</p>
 </div>
-{% endfor %}
-<br>
-<p>
-	{% if article_list.has_previous %}
-		<a href="?page={{ article_list.previous_page_number }}">上一页</a>
-	{% endif %}
-	Page {{ article_list.number }} of {{ article_list.paginator.num_pages }}
-	{% if article_list.has_next %}
-		<a href="?page={{ article_list.next_page_number }}">下一页</a>
-	{% endif %}
-</p>
 {% endblock %}
